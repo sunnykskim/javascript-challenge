@@ -3,9 +3,10 @@ var tableData = data;
 
 /////// Populate Table  ///////
 
+// reference point
 tbody = d3.select("tbody")
 
-// get data for the table + loop 
+/////// Create function to display data ///////
 function displayData(data){ 
     tbody.text("")
     data.forEach(function(sighting){
@@ -32,10 +33,14 @@ button.on("click", function() {
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
+  // Test to see if it works
   console.log(inputValue);
 
+  // Filtered
   var filteredData = tableData.filter(sighting => sighting.datetime===inputValue);
 
+
+  // Test + recall previous function to display new data
   console.log(filteredData)
   displayData(filteredData)
 });
